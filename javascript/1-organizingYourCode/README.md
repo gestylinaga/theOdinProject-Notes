@@ -89,7 +89,6 @@ player1.sayName() // logs 'gesty'
 player2.sayName() // logs 'also gesty'
 ```
 
-
 ## Exercise
 Write a constructor for making "Book" objects.
 
@@ -104,7 +103,81 @@ Write a constructor for making "Book" objects.
 console.log(theHobbit.info());
 ```
 
+### Solution
+```javascript
+// Exercise - Book Object Constructor
+const Book = function(title, author, pages, read) {
+  this.title = title,
+  this.author = author,
+  this.pages = pages,
+  this.read = read, // expects true/false
+
+  // Info Function to display collected info cleanly
+  this.info = function() {
+    // `if` / `else` to allow bool in constructor
+    if (this.read) {
+      haveRead = "already read"
+    } else {
+      haveRead = "not read yet"
+    }
+    // Clean info display formatted string
+    return `${title}, by ${author}, ${pages} pages, ${haveRead}`
+  }
+}
+
+// Creating a new Book object - The Hobbit
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+
+// Logging info for The Hobbit
+console.log(theHobbit.info()); // logs "The Hobbit, by J.R.R. Tolkien, 295 pages, not read yet"
+```
+
 
 ## The ProtoType
+All objects in JavaScript have a `prototype`, which is basically another object
+that the original object *inherits* from. This means that the original object 
+has access to all of its prototype's methods & properties.
+```javascript
+function Student(name, grade) {
+  this.name = name
+  this.grade = grade
+}
 
+// Another way to add functions to objects
+Student.prototype.sayName = function() {
+  console.log(this.name)
+}
+Student.prototype.isPassingClass = function() {
+  console.log("Are they passing this class?")
+}
+```
 
+Recommended Method for Prototypal Inheritance
+```javascript
+function Student() {
+
+}
+
+Student.prototype.sayName = function() {
+  console.log(this.name)
+}
+
+function EigthGrader(name) {
+  this.name = name
+  this.grade = 8
+}
+
+EigthGrader.prototype = Object.create(Student.prototype)
+
+const carl = new EigthGrader("Carl")
+carl.sayName() // logs "Carl"
+carl.grade // 8
+```
+
+Functions in Constructors vs ProtoTypes In Summary:
+- if your methods don't use local variables, use the **prototype** approach
+- if you're creating a lot of object instances, use the **prototype** approach,
+that way, all new instances share the same function set, instead of a new 
+function set for each new object
+- if you're creating a small number of objects, & you're using local 
+variables, you can initialize the method/function **in the constructor**
