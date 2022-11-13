@@ -3,6 +3,7 @@
 ## Notes
 ### Intermediate HTML Concepts
 - [SVGs](./intHTML-SVG.md)
+- [Tables](./intHTML-tables.md)
 
 ### Intermediate CSS Concepts
 

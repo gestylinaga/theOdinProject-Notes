@@ -83,8 +83,28 @@ or has fine details / textures, it is better to use a different filetype.
 ### Embedding SVGs
 2 main approaches: **linked**, or **inline**
 
+**Linking** SVGs works like any other image, with either an HTML element like `<img>`, or in 
+CSS using `background-image: url(./some-image.svg)`. They will still scale properly, but 
+the SVG contents won't be accessible from the webpage.
+
+The alternative is to **inline** your SVGs by pasting the contents directly into the webpage's
+code. This allows you to alter the image dynamically via CSS and/or JavaScript. However , 
+this makes your code harder to read, makes the page less chachable, and for large SVGs, could 
+delay the rest of the HTML load.
+
+Linking is generally cleaner & simpler, but inlining gives more direct control.
 
 ## Additional Resources
+[MDN SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
+
+Free SVG Libraries:
+- [Material Icons from Google](https://fonts.google.com/icons)
+- [Feather Icons](https://feathericons.com/)
+- [The Noun Project](https://thenounproject.com/browse/icons/term/free/?iconspage=1)
+
+SVG Visual Editors:
+- [SVG Path Editor](https://yqnn.github.io/svg-path-editor/)
+- [Inkscape](https://inkscape.org/)
 
 ---
 [top](#)
