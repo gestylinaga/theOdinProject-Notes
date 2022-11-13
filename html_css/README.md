@@ -13,6 +13,7 @@
 ### Forms
 - [Form Basics](./forms-form_basics.md)
 - [Form Validation](./forms-form_validation.md)
+- Project: [Sign-up Form](./projects/sign-up_form/README.md)
 
 ### Grid
 
