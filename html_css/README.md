@@ -8,6 +8,7 @@
 ### Intermediate CSS Concepts
 - [Advanced Selectors](./intCSS-advanced_selectors.md)
 - [Positioning](./intCSS-positioning.md)
+- [CSS Functions](./intCSS-css_functions.md)
 
 ### Forms
 - [Form Basics](./forms-form_basics.md)
