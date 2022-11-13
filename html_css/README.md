@@ -6,8 +6,8 @@
 ### Intermediate CSS Concepts
 
 ### Forms
-- [Form Basics](/forms-form_basics.md)
-- [Form Validation](/forms-form_validation.md)
+- [Form Basics](./forms-form_basics.md)
+- [Form Validation](./forms-form_validation.md)
 
 ### Grid
 
