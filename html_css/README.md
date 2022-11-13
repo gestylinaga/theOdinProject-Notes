@@ -6,6 +6,7 @@
 - [Tables](./intHTML-tables.md)
 
 ### Intermediate CSS Concepts
+- [Advanced Selectors](./intCSS-advanced_selectors.md)
 
 ### Forms
 - [Form Basics](./forms-form_basics.md)
