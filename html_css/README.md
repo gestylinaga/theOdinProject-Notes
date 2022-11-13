@@ -2,6 +2,7 @@
 
 ## Notes
 ### Intermediate HTML Concepts
+- [SVGs](./intHTML-SVG.md)
 
 ### Intermediate CSS Concepts
 
