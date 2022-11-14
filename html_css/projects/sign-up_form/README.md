@@ -28,21 +28,17 @@ Prompt:
 ```
 
 Self-made Checklist:
-- [ ] service description - 3 to 4 sentences
-- [ ] form title - "Let's do this!" in example
-- [ ] first name - input field
-- [ ] last name - input field
-- [ ] email - input field (type="email", valid/not)
-- [ ] phone number - input field (type="regex", valid/not) 
-- [ ] password - input fields (type="password", valid/not)
-- [ ] form box-shadow
-- [ ] 'Create Account' button - color based off bg
-- [ ] 'Already have an account?' link - link color based off bg
-- [ ] bg image - left third of the screen
-- [ ] icon overlay - top third of image
-- [ ] png icon - in white
-- [ ] logo font - in white
-- [ ] photo credit link - on bg image bottom
-
-
-
+- [X] service description - 3 to 4 sentences
+- [X] form title - "Let's do this!" in example
+- [X] first name - input field
+- [X] last name - input field
+- [X] email - input field (type="email", valid/not)
+- [X] phone number - input field (type="regex", valid/not) 
+- [X] password - input fields (type="password", valid/not)
+- [X] form box-shadow
+- [X] 'Create Account' button - color based off bg
+- [X] 'Already have an account?' link - link color based off bg
+- [X] bg image - left third of the screen
+- [X] icon overlay - top third of image
+- [X] png icon - in white
+- [X] logo font - in white

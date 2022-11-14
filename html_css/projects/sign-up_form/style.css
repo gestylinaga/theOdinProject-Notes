@@ -12,25 +12,98 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./bg.jpg');
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 h1, h2 {
   font-family: 'Bungee', cursive;
 }
 
-.overlay {
-  background: rbga(0, 0, 0, 1);
+.bg {
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.bg .overlay {
+  font-family: 'Bungee', cursive;
+  font-size: 5.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, 10%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 5000px;
   color: white;
+  display: flex;
+  align-items: center;
+  scale: 0.5;
 }
 
 .logo {
-  scale: 0.5; 
+  scale: 0.7; 
 }
+
+.bg-image {
+  height: 100vh;
+  width: auto;
+}
+
+main {
+  z-index: 0;
+}
+
+p {
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 
 form {
   background: white;
+  margin-top: 25px;
+}
+
+input:focus {
+  border: 1px solid blue;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+
+.row {
+  display: flex;
+  gap: 3rem;
+  padding-left: 1rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.light-box {
+  padding: 1rem;
+  box-shadow: 0 0 10px black;
+}
+
+button {
+  margin: 10px;
+  padding: 7px;
+  margin-left: 2rem;
+  background-color: orange;
+  color: white;
+  border-radius: 10px;
+}
+
+a {
+  color: orange;
+  text-decoration: none;
 }
