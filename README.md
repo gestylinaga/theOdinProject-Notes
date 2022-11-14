@@ -2,8 +2,8 @@
 Following along 
 [The Odin Project](https://www.theodinproject.com/) <-- 🧔 ⚒️ 
 
-[HTML & CSS Notes](/html_css/README.md)
+[HTML & CSS Notes](/html_css/)
 
-[JavaScript Notes](/javascript/README.md)
+[JavaScript Notes](/javascript/)
 
-[Ruby Notes](/ruby/README.md)
+[Ruby Notes](/ruby/)
