@@ -1,18 +1,17 @@
 // Rock Paper Scissors - Project for 'Basics' Section
 
-// Header
-console.log("Rock Paper Scissors! 🪨 📃 ✂️  ");
-console.log("5 Rounds!");
+// Header / Prompt
+console.log("Rock Paper Scissors! 🪨 📃 ✂️ ");
+console.log("5 Rounds! Most Rounds Wins!");
 
-// Random computer choice from choices list
+// Random computer choice function
 function getComputerChoice() {
-  // List of rps choices
-  const choices = [
+  const choices = [ // List of RPS choices
     "rock",
     "paper",
     "scissors"
   ];
-  // Return valid random choice
+  // Return valid random choice from list
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
@@ -32,15 +31,17 @@ function getPlayerChoice() {
   return playerChoice;
 };
 
+/* 
+  // -- Game Functions --  //
+*/
 
 // Starting scores
 let playerScore = 0;
 let computerScore = 0;
 
-
 // Single round function
 function playRound() {
-  // calling choices functions
+  // 'choices' function calls
   let computerSelection = getComputerChoice();
   let playerSelection = getPlayerChoice();
 
@@ -65,25 +66,23 @@ function playRound() {
   };
 };
 
-
-// Overall game function
+// Main game function
 function game() {
-  // 5 rounds
+  // 5 game rounds
   for (let i = 0; i < 5; i++) {
-    console.log(`Round: ${i+1}  🥊 🥊 \nYou: ${playerScore} | Computer: ${computerScore}`);
+    console.log(`Round: ${i+1} 🥊🥊\nYou: ${playerScore} | Computer: ${computerScore}`);
     let results = playRound();
     console.log(results);
   }
-  // Displaying Results
+  // Displaying results
   if (playerScore > computerScore) {
-    console.log("You Win! 5 rounds won! 🥳 ");
+    console.log("You Win! 5 rounds won! 🥳");
   } else if (computerScore > playerScore){
-    console.log("You Lose! Robots Rule, Humans drool! 🤖 ");
+    console.log("You Lose! Robots Rule, Humans drool! 🤖");
   } else {
-    console.log("Tie Game! Unlucky! 🤨 ");
+    console.log("Tie Game! Unlucky! 🤨");
   }
 };
 
 
-// Main game function call
 game();

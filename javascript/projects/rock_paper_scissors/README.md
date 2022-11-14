@@ -4,6 +4,8 @@ Project for 'Basics' Section
 
 Includes a `.html` file, using `prompt()` and `alert()` in the JavaScript for browser interactivity.
 
+[See the Script](./script.js)
+
 ```javascript
 /* Prompt:
   * a 'getComputerChoice' function that randomly returns a choice
