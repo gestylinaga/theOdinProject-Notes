@@ -17,6 +17,7 @@
 
 ### Grid
 - [Introduction to Grid](./grid-intro_to_grid.md)
+- [Creating a Grid](./grid-creating_a_grid.md)
 
 
 ## Course Links
