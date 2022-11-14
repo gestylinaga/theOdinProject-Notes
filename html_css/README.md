@@ -16,6 +16,7 @@
 - Project: [Sign-up Form](./projects/sign-up_form/README.md)
 
 ### Grid
+- [Introduction to Grid](./grid-intro_to_grid.md)
 
 
 ## Course Links
