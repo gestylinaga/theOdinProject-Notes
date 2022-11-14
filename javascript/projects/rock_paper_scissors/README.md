@@ -1,6 +1,8 @@
 # Rock Paper Scissors
-a console-based Rock-Paper-Scissors game, with an `html` file for a browser frontend - 
+a console-based Rock-Paper-Scissors game - 
 Project for 'Basics' Section
+
+Includes a `.html` file, using `prompt()` and `alert()` in the JavaScript for browser interactivity.
 
 ```javascript
 /* Prompt:

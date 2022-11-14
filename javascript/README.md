@@ -3,6 +3,7 @@
 ## Notes
 ### Basics
 - [Fundamentals 1](./basics-fundamentals1.md)
+- Project: [Rock Paper Scissors](./projects/rock_paper_scissors/README.md)
 
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
