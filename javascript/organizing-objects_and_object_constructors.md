@@ -181,3 +181,6 @@ that way, all new instances share the same function set, instead of a new
 function set for each new object
 - if you're creating a small number of objects, & you're using local 
 variables, you can initialize the method/function **in the constructor**
+
+---
+[top](#)
