@@ -3,11 +3,11 @@
 ## Notes
 ### Basics
 - [Fundamentals 1](./basics-fundamentals1.md)
-- Project: [Rock Paper Scissors](./projects/rock_paper_scissors/README.md)
+- Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
-- Project: [Library](./projects/library/README.md)
+- Project: [Library](./projects/library/)
 
 ### JavaScript in the Real World
 
