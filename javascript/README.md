@@ -3,6 +3,7 @@
 ## Notes
 ### Basics
 - [Fundamentals 1](./basics-fundamentals1.md)
+- [JavaScript Developer Tools](./basics-dev_tools.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 
 ### Organizing your JavaScript Code

@@ -1,4 +1,4 @@
-# Basics
+# JavaScript Basics
 ## Fundamentals 1
 
 ### Variables
