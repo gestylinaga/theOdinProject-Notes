@@ -3,6 +3,7 @@
 ## Notes
 ### Basics
 - [Fundamentals 1](./basics-fundamentals1.md)
+- [Fundamentals 2](./basics-fundamentals2.md)
 - [JavaScript Developer Tools](./basics-dev_tools.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 
