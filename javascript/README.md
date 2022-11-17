@@ -6,6 +6,7 @@
 - [Fundamentals 2](./basics-fundamentals2.md)
 - [JavaScript Developer Tools](./basics-dev_tools.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
+- [Clean Code](./basics-clean_code.md)
 
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
