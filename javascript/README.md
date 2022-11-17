@@ -7,6 +7,7 @@
 - [JavaScript Developer Tools](./basics-dev_tools.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 - [Clean Code](./basics-clean_code.md)
+- [DOM Manipulation & Events](./basics-DOM_manipulation_and_events.md)
 
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
