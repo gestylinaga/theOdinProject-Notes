@@ -218,11 +218,119 @@ elements inside of it:
   - hint: after creating the `<div>` with `createElement`, append the `<h1>` 
   and `<p>` to it before adding it to the container
 
+#### Solution
+```javascript
+// DOM Manipulation excercise
+const container = document.querySelector('#container');
+
+// paragraph with red text
+let para = document.createElement('p');
+para.textContent = "This is in red!";
+para.style.color = 'red';
+container.appendChild(para)
+
+// h3 header in blue
+let blueHeader = document.createElement('h3');
+blueHeader.textContent = "I'm a blue h3!"
+blueHeader.style.color = 'blue';
+container.appendChild(blueHeader)
+
+
+// new div, pink background, black border
+let div = document.createElement('div');
+div.setAttribute('style', 'background: pink; border: 1px solid black;');
+
+// header inside div
+let newHeader = document.createElement('h1');
+newHeader.textContent = "I'm in a div";
+
+// paragraph inside div
+let newPara = document.createElement('p');
+newPara.textContent = "ME TOO!";
+
+// appending new elements to new div
+div.appendChild(newHeader);
+div.appendChild(newPara);
+
+// appending new div to 'container'
+container.appendChild(div);
+```
+
 ### Events
+Events are how you make the *magic* happen on your pages. Events are actions 
+that occur on your webpage, such as mouse-clicks or keypresses, and using 
+JavaScript we can make our webpage *listen* to and *react* to these events.
+
+3 Main Methods:
+1. attach functions' attributes directly on your HTML elements:
+```html
+<button onclick="alert('Hello World!')">Click Me</button>
+```
+2. set the "on_event_" property on the DOM object in your JavaScript:
+(a little better, because the js/html are separated, still only 1 property)
+```html
+<!-- HTML File -->
+<button id="btn">Click Me</button>
+```
+```javascript
+// JavaScript File
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
+```
+3. attach event listeners to the nodes in your JavaScript:
+(much more flexible/powerful method, allows multiple events if the need arises)
+```html
+<!-- HTML File -->
+<button id="btn">Click Me Too</button>
+```
+```javascript
+// JavaScript File
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+  alert("Hello World");
+});
+```
 
 #### Attaching Listeners to Groups of Nodes
+You can combine `querySelectorAll` with the `.forEach()` method to attach 
+event listeners to every node in a node list.
+```html
+<!-- HTML -->
+<div id="container">
+  <button id="1">Click Me</button>
+  <button id="2">Click Me</button>
+  <button id="3">Click Me</button>
+</div>
+```
+```javascript
+// buttons is a node list, it looks / acts like an array
+const buttons = document.querySelectorAll('button');
+
+// using .forEach method to iterate through each button
+buttons.forEach((button) => {
+  
+  // and for each one, we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
+```
+More useful events:
+- `click`
+- `dblclick`
+- `keydown`
+- `keyup`
+- [W3Schools Page](https://www.w3schools.com/jsref/dom_obj_event.asp) - 
+complete list of HTML DOM events
+
 
 ## Additional Resources
+- [Eloquent JS - DOM](https://eloquentjavascript.net/14_dom.html) - chapter on 
+the DOM
+- [Eloquent JS - Handling Events](http://eloquentjavascript.net/14_event.html) - 
+chapter on Handling Events
+- [W3Schools](https://www.w3schools.com/js/js_htmldom.asp) - page on JavaScript 
+HTML DOM
 
 ---
 [top](#)
