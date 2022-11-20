@@ -41,30 +41,182 @@ const controls = document.querySelector('.controls');
 console.dir(controls.previousElementSibling);
 // selects the prior sibling => .display
 ```
+so you're identifying a certain node based on it relationship to the nodes 
+around it.
 
 ### DOM Methods
+As mentioned above, when your HTML is parsed by a web browser, it is converted 
+to the DOM, with the *nodes* being objects that have their own properties & 
+methods attached to them.
 
 #### Query Selectors
+- `element.querySelector(selector)` - returns a reference to the first match 
+of `selector`
+- `element.querySelectorAll(selectors)` - returns a "nodelist" containing 
+references to all of the matches of the `selectors`
+
+**Note**: that the return value from `querySelectorAll` is **NOT** an array, but 
+a nodelist. The difference being that several array methods are missing from 
+nodelists, but that can be solved by converting to an array.
 
 #### Element Creation
+- `document.createElement(tagName, [options])` - creates a new element of tag 
+type `tagName`. `[options]` in this case means you can add some optional 
+parameters to the function.
+
+```javascript
+const div = document.createElement('div');
+```
+This function does **NOT** put the new element into the DOM, it simply creates 
+it in memory so you can manipulate the the element before placing it.
 
 #### Append Elements
+- `parentNode.appendChild(childNode)` - appends `childNode` as the last child 
+of `parentNode`
+- `parentNode.insertBefore(newNode, referenceNode)` - inserts `newNode` into 
+`parentNode` before `referenceNode`
 
 #### Remove Elements
+- `parentNode.removeChild(child)` - removes `child` from `parentNode` on the 
+DOM and returns a reference to `child`
 
-#### Altering Elements
+### Altering Elements
+When you have a reference to an element, you can use that reference to alter 
+the element's own properties ie:
+```javascript
+const div = document.createElement('div');
+// creates a new div referenced in the variable 'div'
+```
 
 #### Adding Inline Style
+```javascript
+const div = document.createElement('div');
+
+div.style.color = 'blue';
+// adds the indicated style rule
+
+div.style.cssText = 'color: blue; background: white;';
+// adds several style rules
+
+div.setAttribute('style', 'color: blue; background: white;');
+// adds several style rules
+```
+
+For more info on inline styles: [DOM Enlightenment](http://domenlightenment.com/#6.2) - 
+Section on CSS Style rules
+
+**Note** - that if you're using a "kebab-cased" css rule from javascript, you'll 
+either need to use camelCase, or you'll need to use bracket notation instead of
+dot notation:
+```javascript
+div.style.background-color 
+// doesn't work, attempts to subtract color from background
+
+div.style.backgroundColor 
+// works fine
+
+div.style['background-color'] 
+// also works fine
+
+div.style.cssText = 'background-color: white;'
+// also works in a string
+```
 
 #### Editing Attributes
+```javascript
+div.setAttribute('id', 'theDiv');
+// if id exists, update it to 'theDiv', else create an id with value 'theDiv'
+
+div.getAttribute('id');
+// returns value of specified attribute, in this case, 'theDiv'
+
+div.removeAttribute('id');
+// removes specified attribute
+```
+See [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) - 
+section on HTML attributes for more available attributes.
 
 #### Working with Classes
+```javascript
+div.classList.add('new');
+// adds class 'new' to your new div
+
+div.classList.remove('new');
+// removes 'new' class from div
+
+div.classList.toggle('active');
+// if div doesn't have class 'active', then add it, or if it does, remove it
+```
+It is often standard (and cleaner) to toggle a CSS style rather than adding 
+and removing inline CSS
 
 #### Adding Text Context 
+```javascript
+div.textContent = 'Hello World!'
+// creates a text node containing 'Hello World!' and inserts it into the div
+```
 
 #### Adding HTML Content
+```javascript
+div.innerHTML = '<span>Hello World!</span>';
+// renders the HTML inside the div
+```
+
+**Note**: that `textContent` is preferable for adding text, and `innerHTML` 
+should be used sparingly as it can create security risks if misused. See this 
+[WebDevSimplified](https://youtu.be/ns1LX6mEvyM) video for an example.
+
+### Final Example
+Creating and appending a DOM element to a webpage:
+```html
+<!-- HTML File -->
+<body>
+  <h1>
+    The Title of the webpage
+  </h1>
+  <div id="container"></div>
+</body>
+```
+```javascript
+// JavaScript File
+const container = document.querySelector('#container');
+
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = 'This is the glorious text-content!';
+
+container.appendChild(content);
+```
+In the JavaScript, first we get a reference to the `container` div that already 
+exists in the HTML. Then we create a new div and store it in the variable 
+`content`. We add a class and some text to the `content` div, and finally
+append that div to `container`. **After** the JavaScript is run, the DOM tree 
+would look like:
+```html
+<!-- The DOM -->
+<body>
+  <h1>
+    The Title of the webpage
+  </h1>
+  <div id="container">
+    <div class="content">
+      This is the glorious text-content!
+    </div>
+  </div>
+</body>
+```
 
 ### Excercise
+Using the aboxe example, add the following elements to the container using 
+ONLY JavaScript, and the DOM methods shown above.
+1. a `<p>` with red text that says "Hey I'm red!"
+2. an `<h3>` with blue text that says "I'm a blue h3!"
+3. a `<div>` with a black border and pink background color with the following 
+elements inside of it:
+  - another `<h1>` that says "I'm in a div"
+  - a `<p>` that says "ME TOO!"
+  - hint: after creating the `<div>` with `createElement`, append the `<h1>` 
+  and `<p>` to it before adding it to the container
 
 ### Events
 
