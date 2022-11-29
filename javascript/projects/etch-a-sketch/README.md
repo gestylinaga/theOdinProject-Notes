@@ -1,6 +1,12 @@
 # Etch-a-Sketch
 a browser version of something between a sketchpad and an etch-a-sketch
 
+[see script](./script.js)
+
+[see HTML file](./index.html)
+
+[see CSS file](./style.css)
+
 ```javascript
 /* Prompt
   1. create a webpage with a 16x16 grid of square divs
