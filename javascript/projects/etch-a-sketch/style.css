@@ -6,7 +6,7 @@
 }
 
 body {
-  background: blue;
+  background: #845ec2;
   color: white;
   display: flex;
   flex-direction: column;
@@ -18,11 +18,22 @@ body {
 .container {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
-
-
+  /*
+  width: 960px;
+  height: 960px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  */
 }
 
 .container > div {
   width: 100px;
   height: 100px;
+}
+
+.blank {
+  background: white;
+}
+
+.filled {
+  background: black;
 }
