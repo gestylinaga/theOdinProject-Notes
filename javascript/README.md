@@ -10,6 +10,7 @@
 - [DOM Manipulation & Events](./basics-DOM_manipulation_and_events.md)
 - Project: Revisiting [Rock Paper Scissors - Button UI](./projects/rps_ui)
 - Project: [Etch-a-Sketch](./projects/etch-a-sketch/)
+- Project: [Calculator](./projects/calculator)
 
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
