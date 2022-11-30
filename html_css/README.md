@@ -18,6 +18,7 @@
 ### Grid
 - [Introduction to Grid](./grid-intro_to_grid.md)
 - [Creating a Grid](./grid-creating_a_grid.md)
+- [Positioning Grid Elements](./grid-positioning_grid_elements.md)
 
 
 ## Course Links
