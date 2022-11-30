@@ -1,7 +1,7 @@
 # Etch-a-Sketch
 a browser version of something between a sketchpad and an etch-a-sketch
 
-[see script](./script.js)
+[see JavaScript file](./script.js)
 
 [see HTML file](./index.html)
 
