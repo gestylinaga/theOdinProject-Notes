@@ -3,4 +3,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.container {
+  display: grid;
+  width: 960px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*
+button {
+  width: 90px;
+  height: 90px;
+}
+*/
+
+.number {
+  color: blue;
+}
+
+.operator {
+  color: red;
 }
