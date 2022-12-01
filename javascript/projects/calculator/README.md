@@ -14,7 +14,7 @@ a simple browser-based calculator - project for 'basics' section
     - each operator
     - equals '='
     - clear 'C'
-  * A function to populate the display
+  * Populate the display with inputs selected
     - & saving the 'display value' into a variable for future use
   * Make the calculator functional
     - store input numbers
@@ -28,7 +28,7 @@ a simple browser-based calculator - project for 'basics' section
     - should round answers with long decimals to avoid overflow
     - 'error' if '=' is pressed too early in operation
     - 'C' clear should completely clear existing data
-    - specific 'error' is trying to divide by zero
+    - specific 'error' for trying to divide by zero
 
   * Extra Credit:
     - allow floating point numbers (decimals)

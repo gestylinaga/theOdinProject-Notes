@@ -6,6 +6,20 @@
   font-size: 2rem;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results {
+  width: 960px;
+  height: 3rem;
+  border: 5px solid black;
+  text-align: end;
+}
+
 .container {
   display: grid;
   width: 960px;

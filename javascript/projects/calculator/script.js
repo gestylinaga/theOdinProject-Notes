@@ -2,9 +2,8 @@
 console.log('by: gesty 🏄');
 
 /* TODO
-  * add display
   * fix grid template
-  * add event listeners to number buttons
+  * add if/else for multiple operations
 */
 
 // Basic math functions
@@ -33,18 +32,51 @@ function operate(a, b, op) {
   } else {
     result = divide(a, b);
   }
-  console.log(result);
+  return result;
 }
-operate(2, 4, 'add'); // test function call
+//operate(2, 4, 'add'); // test function call
 
+const resultsDiv = document.querySelector('.results');
 
-// Function to populate display
+let tempNumber = ''; // allows for numbers >= 10
+// Saving inputs into arrays
+let numberList = [];
+let operatorList = [];
 
+// Event listeners for number buttons
+const numberButtons = document.querySelectorAll('.number');
+numberButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    tempNumber += button.innerHTML; // add number to tempNumber
+    resultsDiv.append(button.innerHTML); // add number to display
+  })
+})
 
 // Event listeners for operator buttons
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    console.log(button.id);
+    numberList.push(parseInt(tempNumber)); // add tempNumber to numberList
+    operatorList.push(button.id) // add operator to operatorList
+    resultsDiv.append(` ${button.innerHTML} `); // add operator to display
+    tempNumber = ''; // reset tempNumber
   })
+})
+
+// Event listener on 'clear' button
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', () => {
+  // resets everything back to default / blank
+  resultsDiv.textContent = '';
+  tempNumber = '';
+  numberList = [];
+  operatorList = [];
+})
+
+// Event listener on 'equals' button
+const equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', () => {
+  numberList.push(parseInt(tempNumber));
+  let finalResult = operate(numberList[0], numberList[1], operatorList[0]);
+  resultsDiv.textContent = finalResult;
 })
