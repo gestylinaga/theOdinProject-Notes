@@ -2,7 +2,6 @@
 console.log('by: gesty 🏄');
 
 /* TODO
-  * fix grid template
   * add if/else for multiple operations
 */
 

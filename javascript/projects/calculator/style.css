@@ -7,6 +7,7 @@
 }
 
 body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +25,65 @@ body {
   display: grid;
   width: 960px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "seven eight nine add"
+    "four five six subtract"
+    "one two three multiply"
+    "clear zero equals divide"
+
+}
+
+#nine {
+  grid-area: nine;
+}
+#eight {
+  grid-area: eight;
+}
+#seven {
+  grid-area: seven;
+}
+#six {
+  grid-area: six;
+}
+#five {
+  grid-area: five;
+}
+#four {
+  grid-area: four;
+}
+#three {
+  grid-area: three;
+}
+#two {
+  grid-area: two;
+}
+#one {
+  grid-area: one;
+}
+#zero {
+  grid-area: zero;
+}
+
+.clear {
+  grid-area: clear;
+  color: orange;
+}
+.equals {
+  grid-area: equals;
+  color: green;
+}
+
+#add {
+  grid-area: add;
+}
+#subtract {
+  grid-area: subtract;
+}
+#multiply {
+  grid-area: multiply;
+}
+#divide {
+  grid-area: divide;
 }
 
 /*
