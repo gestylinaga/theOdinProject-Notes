@@ -1,6 +1,12 @@
 # Calculator
 a simple browser-based calculator - project for 'basics' section
 
+[see JavaScript file](./script.js)
+
+[see HTML file](./index.html)
+
+[see CSS file](./style.css)
+
 ```javascript
 /* Prompt
   * Functions for basic math operators
