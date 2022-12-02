@@ -115,7 +115,7 @@ to that word:
   display: inline-grid;
   grid-template: 40px 40px 40px 40px 40px /  40px 40px 40px 40px 40px;
   background-color: lightblue;
-  grid-template-area:
+  grid-template-areas:
     "living-room living-room living-room living-room living-room"
     "living-room living-room living-room living-room living-room"
     "bedroom bedroom bathroom kitchen kitchen"
