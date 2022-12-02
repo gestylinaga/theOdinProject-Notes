@@ -21,6 +21,14 @@ body {
   text-align: end;
 }
 
+/* Button Colors */ 
+.number {
+  color: blue;
+}
+.operator {
+  color: red;
+}
+
 .container {
   display: grid;
   width: 960px;
@@ -30,9 +38,17 @@ body {
     "four five six subtract"
     "one two three multiply"
     "clear zero equals divide"
-
 }
 
+/* Grid Areas via Template*/
+.clear {
+  color: orange;
+  grid-area: clear;
+}
+.equals {
+  grid-area: equals;
+}
+/* Numbers */
 #nine {
   grid-area: nine;
 }
@@ -63,16 +79,7 @@ body {
 #zero {
   grid-area: zero;
 }
-
-.clear {
-  grid-area: clear;
-  color: orange;
-}
-.equals {
-  grid-area: equals;
-  color: green;
-}
-
+/* Operators */
 #add {
   grid-area: add;
 }
@@ -84,19 +91,4 @@ body {
 }
 #divide {
   grid-area: divide;
-}
-
-/*
-button {
-  width: 90px;
-  height: 90px;
-}
-*/
-
-.number {
-  color: blue;
-}
-
-.operator {
-  color: red;
 }
