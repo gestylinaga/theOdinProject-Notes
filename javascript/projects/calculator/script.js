@@ -2,7 +2,7 @@
 console.log('by: gesty 🏄');
 
 /* TODO
-  * add if/else for multiple operations
+  * round answer on display overflow
 */
 
 // Basic math functions
@@ -16,7 +16,12 @@ function multiply(a, b) {
   return a * b;
 }
 function divide(a, b) {
-  return a / b;
+  // if trying to divide by zero
+  if (b == 0) {
+    return "Nice try Satan..."
+  } else {
+    return a / b;
+  }
 }
 
 // Function to handle operations
@@ -33,8 +38,8 @@ function operate(a, b, op) {
   }
   return result;
 }
-//operate(2, 4, 'add'); // test function call
 
+// Result display div
 const resultsDiv = document.querySelector('.results');
 
 let tempNumber = ''; // allows for numbers >= 10
@@ -76,6 +81,21 @@ clearButton.addEventListener('click', () => {
 const equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', () => {
   numberList.push(parseInt(tempNumber));
+  
+  // while loop to allow multiple operations in single equation
+  while (numberList.length > 2) {
+    let tempResult = operate(numberList[0], numberList[1], operatorList[0]);
+    numberList.shift(); // removes first array item
+    operatorList.shift(); // removes first array item
+    numberList[0] = tempResult; // sets tempResult as new first array item
+  }
+
+  // Final result when number array only has 2 items left
   let finalResult = operate(numberList[0], numberList[1], operatorList[0]);
   resultsDiv.textContent = finalResult;
+  tempNumber = finalResult; // sets solution to new tempNumber
+
+  // reset back to blank defaults
+  numberList = [];
+  operatorList = [];
 })
