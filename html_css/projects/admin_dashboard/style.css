@@ -3,13 +3,79 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Colors */
+:root {
+  --bg: #1a1b26;
+  --fg: #a9b1d6;
+  --term-black: #414868;
+  --text: #c0caf5;
+  --red: #f7768e;
+  --blue: #7aa2f7;
+  --green: #9ece6a;
+  --magenta: #bb9af7;
+  --orange: #ff9e64;
 }
 
 body {
-  background: black;
-  color: white;
+  height: 100vh;
 }
 
 .grid-container {
   display: grid;
+  grid-template-columns: 300px repeat(2, 1fr);
+  grid-template-areas:
+  "S H H H H"
+  "S M M M M"
+  "S M M M M"
+  "S M M M M"
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar {
+  grid-area: S;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 0.5rem;
+}
+
+.sidebar li {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+header {
+  grid-area: H;
+  background: white;
+/*
+  display: grid;
+*/
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-buttons > button {
+  color: var(--text);
+  background: var(--term-black);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+main {
+  grid-area: M;
+  background: var(--fg);
 }
