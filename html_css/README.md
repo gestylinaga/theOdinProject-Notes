@@ -19,6 +19,7 @@
 - [Introduction to Grid](./grid-intro_to_grid.md)
 - [Creating a Grid](./grid-creating_a_grid.md)
 - [Positioning Grid Elements](./grid-positioning_grid_elements.md)
+- [Advanced Grid Properties](./grid-advanced_grid_properties.md)
 
 
 ## Course Links
