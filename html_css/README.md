@@ -20,6 +20,7 @@
 - [Creating a Grid](./grid-creating_a_grid.md)
 - [Positioning Grid Elements](./grid-positioning_grid_elements.md)
 - [Advanced Grid Properties](./grid-advanced_grid_properties.md)
+- Project: [Admin Dashboard](./projects/admin_dashboard/)
 
 
 ## Course Links
