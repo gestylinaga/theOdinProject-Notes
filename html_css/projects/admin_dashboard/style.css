@@ -56,12 +56,36 @@ a {
 header {
   grid-area: H;
   background: white;
-/*
   display: grid;
-*/
+  grid-template-areas: 
+  "search search search small-profile name"
+  "big-profile greeter greeter buttons buttons"
+}
+
+.search {
+  grid-area: search;
+}
+
+.big-profile {
+  grid-area: big-profile;
+  scale: .75;
+}
+
+.greeter {
+  grid-area: greeter;
+}
+
+.small-profile {
+  grid-area: small-profile;
+  scale: .5;
+}
+
+.small-name {
+  grid-area: name;
 }
 
 .header-buttons {
+  grid-area: buttons;
   display: flex;
   gap: 1rem;
 }
