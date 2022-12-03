@@ -16,7 +16,7 @@ let library = [];
 const container = document.querySelector('.container');
 
 // Book Object constructor
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read=false) {
   this.title = title,
   this.author = author,
   this.pages = pages,
@@ -73,3 +73,9 @@ function displayBooks() {
   }
 }
 displayBooks();
+
+// New Book Button
+const newButton = document.querySelector('.new');
+newButton.addEventListener('click', () => {
+  addBookToLibrary();
+})
