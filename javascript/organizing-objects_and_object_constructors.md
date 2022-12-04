@@ -1,4 +1,4 @@
-# Organizing your JavaScript Code - JavaScript - The Odin Project
+# Organizing your JavaScript Code
 
 ## Objects & Object Constructors
 ```javascript
@@ -24,7 +24,8 @@ myObject["obnoxious property"] // [Function]
 but **Bracket Notation** is used when it is not possible, ie:
 `myObject."obnoxious property"` -- because it's a string w/ a space
 - **Bracket Notation** is also used when working with variables, which
-doesn't work with **Dot Notation** ie: `myObject[variable]` instead of `myObject.variable`
+doesn't work with **Dot Notation** ie: `myObject[variable]` instead of 
+`myObject.variable`
 
 ## Objects as a Design Pattern
 One of the simplest ways to organize code is to group things into objects.
@@ -50,9 +51,10 @@ const playerTwo = {
   marker: "O"
 }
 ```
-Even though it looks like more effort, and requires more lines of code, `Example 2` is 
-the preferred way to do it. It cuts down on remembering variable names & in instances 
-when you don't know the outcome yet, it allows code like this:
+Even though it looks like more effort, and requires more lines of code, 
+`Example 2` is the preferred way to do it. It cuts down on remembering variable 
+names & in instances when you don't know the outcome yet, it allows code like 
+this:
 ```javascript
 function gameOver(winningPlayer) {
   console.log("Congratulations!")
@@ -73,7 +75,8 @@ which you then call by using the keyword `new`:
 const player = new Player('gesty', 'X')
 console.log(player.name) // 'gesty'
 ```
-Just like using the **Object Literal** method, you can add functions to an object:
+Just like using the **Object Literal** method, you can add functions to an 
+object:
 ```javascript
 function Player(name, marker) {
   this.name = name
@@ -129,7 +132,8 @@ const Book = function(title, author, pages, read) {
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 
 // Logging info for The Hobbit
-console.log(theHobbit.info()); // logs "The Hobbit, by J.R.R. Tolkien, 295 pages, not read yet"
+console.log(theHobbit.info()); 
+// logs "The Hobbit, by J.R.R. Tolkien, 295 pages, not read yet"
 ```
 
 
