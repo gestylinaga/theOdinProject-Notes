@@ -15,6 +15,7 @@
 ### Organizing your JavaScript Code
 - [Objects & Object Constructors](./organizing-objects_and_object_constructors.md)
 - Project: [Library](./projects/library/)
+- [Factory Functions and the Module Pattern](./organizing-factory_functions_and_the_module_pattern.md)
 
 ### JavaScript in the Real World
 
