@@ -37,8 +37,10 @@ function addBookToLibrary() {
 
 // Function to display books
 function displayBooks() {
+//
   for (Book of library) {
     let bookDisplay = document.createElement('div');
+    bookDisplay.dataset.index = parseInt(library.indexOf(Book));
     bookDisplay.classList.add('card');
 
     let header = document.createElement('h2');
@@ -63,19 +65,30 @@ function displayBooks() {
     };
     bookDisplay.appendChild(readStatus);
 
-    /*
+    // TODO: fix this ⬇️
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => {
+      console.log(Book);
+    })
+    bookDisplay.appendChild(deleteButton);
+
     let readButton = document.createElement('button');
     readButton.textContent = 'Read?';
     bookDisplay.appendChild(readButton);
-    */
+    // Fix that ⬆️
 
     container.appendChild(bookDisplay);
   }
 }
 displayBooks();
 
-// New Book Button
-const newButton = document.querySelector('.new');
-newButton.addEventListener('click', () => {
-  addBookToLibrary();
-})
+// New Book Form Popup
+function openForm() {
+  document.querySelector('.formPopup').style.display = 'block';
+}
+function closeForm() {
+  document.querySelector('.formPopup').style.display = 'none';
+}
+
+console.log(library);
