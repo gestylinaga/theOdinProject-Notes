@@ -148,6 +148,11 @@ The concept of private functions if heavily encouraged. Consider them best
 practice.
 
 ### Back to Factory Functions 
+Recall that factories are simply plain old JavaScript functions that return 
+objects for you to use.
+
+An example game using objects to describe players and functions for things they 
+can do:
 ```javascript
 const Player = (name, level) => {
   let health = level * 2;
@@ -179,10 +184,94 @@ const spam = Player('spam', 10);
 const eggs = Player('eggs', 5);
 spam.attack(eggs);
 ```
+Using the example above, if you tried to call something like `spam.die()` or 
+`eggs.health -= 1000`, you would get and error. This is because those functions 
+are **not** exposed *publicly*. In this case, the `health` value is a 
+**private** function inside the object, and would require you to export a 
+function to manipulate it.
+
+#### Inheritance with Factories
+Just like with constructors, factories can also deal with the concepts of 
+prototypes and inheritance to give objects access to other objects:
+```javascript
+const Person = (name) => {
+  const sayName = () => console.log(`my name is ${name}`);
+  return {sayName};
+}
+
+const Nerd = (name) => {
+  // simply create a person and pull out the sayName function
+  // with destructuring assignment syntax
+  const {sayName} = Person(name);
+  const doSomethingNerdy = () => console.log('nerd stuff');
+  return {sayName, doSomethingNerdy};
+}
+
+const brendanFraiser = Nerd('Brendan Fraiser');
+
+brendanFraiser.sayName(); // my name is Brendan Fraiser
+brendanFraiser.doSomethingNerdy(); // nerd stuff
+```
+This pattern allows you to pick and choose which functions you want to include 
+in your new object. *If* you want to lump together all of another object's 
+values into a new object, you can use `Object.assign` :
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+here.
+```javascript
+const Nerd = (name) => {
+  const prototype = Person(name);
+  const doSomethingNerdy = () => console.log('nerd stuff');
+  return Object.assign({}, prototype, {doSomethingNerdy});
+}
+```
 
 ### The Module Pattern
+> **Note**: ES6 introduced a new JavaScript feature called 'modules' that let 
+> you import / export code between JavaScript files. This is **not** what this 
+> section is about.
+
+modules are very similar to factory functions, but they are created differently:
+```javascript
+const calculator = (() => {
+  const add = (a, b) => a + b;
+  const sub = (a, b) => a - b;
+  const mul = (a, b) => a * b;
+  const div = (a, b) => a / b;
+  return {
+    add,
+    sub,
+    mul,
+    div,
+  };
+})();
+
+calculator.add(3,5); // 8
+calculator.sub(6,2); // 4
+calculator.mul(14,5534); // 77476
+```
+The concepts are exactly the same as factory functions. However, instead of 
+creating a factory that you can reuse to create multiple objects, the module 
+pattern wraps the factory in an **IIFE** (Immediately Invoked Function 
+Expression).
+
+See [LearnCode.academy YT](https://www.youtube.com/playlist?list=PLoYCgNOIyGABs-wDaaxChu82q_xQgUb4f) 
+video on Modular JS
+
+In the above example, the function inside the IIFE is a simple factory function 
+object assigned to the variable `calculator` (We don't need multiple 
+calculators, 1 is enough). Just like in the facory examples, you can have as 
+many number of private functions / variables as you want, while only exposing 
+the functions you need in the program.
+
+A useful side-effect of encapsulating code into objects is **namespacing**. 
+Namespacing is a technique that is used to avoid naming collisions in programs.
+This allows you to use the name `add` for example, for multiple functions, each 
+encapsulated inside objects with no issues: `calculator.add()`, 
+`displayController.add()`, `operateStack.add()`.
 
 ## Additional Resources
+[Patterns.com Article](https://www.patterns.dev/posts/classic-design-patterns/) 
+on 'Learning JavaScript Design Patterns'
 
 ---
 [top](#)
