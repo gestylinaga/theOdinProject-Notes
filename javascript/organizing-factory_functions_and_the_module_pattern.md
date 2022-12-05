@@ -81,8 +81,104 @@ console.log(a); // 17, because of scope
 scope
 
 ### Private Variables and Functions
+Consider this example of scope in JavaScript:
+```javascript
+const FactoryFunction = string => {
+  const capitalizeString = () => string.toUpperCase();
+  const printString = () => console.log(`----${capitalizeString()}----`);
+  return { printString };
+};
+
+const taco = FactoryFunction('taco');
+
+printString(); // ERROR
+capitalizeString(); // ERROR
+taco.capitalizeString(); // ERROR
+taco.printString(); // this prints "----TACO----"
+```
+Because of scope, calling `printString()` and `capitalizeString()` outside of 
+the `FactoryFunction` results in an error. However calling `printString()` 
+**will** work because it is being returned in the function.
+
+The concept of closure is the idea that functions retain their scope even if 
+they are passed and called outside of that scope. In the example above, 
+`printString()` has access to everything inside of `FactoryFunction()`, even if 
+it gets called outside of that function.
+
+Another example:
+```javascript
+const counterCreator = () => {
+  let count = 0;
+  return () => {
+    console.log(count);
+    count++;
+  };
+};
+
+const counter = counterCreator();
+
+counter(); // 0
+counter(); // 1
+counter(); // 2
+counter(); // 3
+```
+In this example:
+- `counterCreator` initializes a local variable `count`, and returns a function
+- we use that function by assigning it a variable name `counter`
+- every time we run the function, it logs `count` to the console, and 
+increments it
+- keep in mind, `counter()` is calling the return value of `counterCreator`
+
+This means that, the function `counter` is a closure, it has access to the 
+variable `count` and can both print and increment it, but there is no other way 
+for the program to access that variable.
+
+In the context of factory functions, closures allow you to create **private** 
+variables & functions. Private functions are functions that are used in the 
+workings of objects, but are not intended to be used elsewhere in the program.
+
+To put it another way, even though an object might only do 1 or 2 things, you 
+are free to split the functions up as mush as you want (cleaner, easier to read) 
+and only export the functions that the rest of the program needs.
+
+Using that terminology with the `printString` example from earlier, 
+`capitalizeString` is a **private** function, and `printString` is **public**.
+
+The concept of private functions if heavily encouraged. Consider them best 
+practice.
 
 ### Back to Factory Functions 
+```javascript
+const Player = (name, level) => {
+  let health = level * 2;
+  const getLevel = () => level;
+  const getName = () => name;
+  const die = () => {
+    // uh oh
+  };
+  const damage = x => {
+    health -= x;
+    if (health <= 0) {
+      die();
+    }
+  };
+  const attack = enemy => {
+    if (level < enemy.getLevel()) {
+      damage(1);
+      console.log(`${enemy.getName()} has damaged ${name}`);
+    }
+    if (level >= enemy.getLevel()) {
+      enemy.damage(1);
+      cosnole.log(`${name} has damaged ${enemy.getName()}`);
+    }
+  };
+  return {attack, damage, getLevel, getName};
+};
+
+const spam = Player('spam', 10);
+const eggs = Player('eggs', 5);
+spam.attack(eggs);
+```
 
 ### The Module Pattern
 
