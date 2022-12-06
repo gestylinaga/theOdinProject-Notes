@@ -5,6 +5,7 @@
 - [Fundamentals 1](./basics-fundamentals1.md)
 - [Fundamentals 2](./basics-fundamentals2.md)
 - [JavaScript Developer Tools](./basics-dev_tools.md)
+- [Fundamentals 3](./basics-fundamentals3.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 - [Clean Code](./basics-clean_code.md)
 - [DOM Manipulation & Events](./basics-DOM_manipulation_and_events.md)
