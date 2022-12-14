@@ -8,6 +8,7 @@
 - [Fundamentals 3](./basics-fundamentals3.md)
 - Project: [Rock Paper Scissors](./projects/rock_paper_scissors/)
 - [Clean Code](./basics-clean_code.md)
+- [Fundamentals 4](./basics-fundamentals4.md)
 - [DOM Manipulation & Events](./basics-DOM_manipulation_and_events.md)
 - Project: Revisiting [Rock Paper Scissors - Button UI](./projects/rps_ui)
 - Project: [Etch-a-Sketch](./projects/etch-a-sketch/)
