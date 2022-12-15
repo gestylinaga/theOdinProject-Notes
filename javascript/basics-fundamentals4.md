@@ -224,8 +224,57 @@ loop through an array. However, it offers more chances to introduce bugs into
 your code, and it's usually best practice to use a `for ... of` loop instead.
 
 #### Exiting Loops with break
+If you want to exit a loop before all the iterations have been completed, you 
+can use the `break` statement. A `break` statement will immediately exit the 
+loop and make the browser move on to any code that follows it.
+
+Example `break` statement:
+```javascript
+btn.addEventListener('click', () => {
+  const searchName = input.value.toLowerCase();
+  input.value = '';
+  input.focus();
+  para.textContent = '';
+  for (const contact of contacts) {
+    const splitContact = contact.split(':');
+    if (splitContact[0].toLowerCase() === searchName) {
+      para.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+      break;
+    };
+  };
+  if (para.textContent === '') {
+    para.textContent = 'Contact not found.';
+  };
+});
+```
+in this example, if the searchName matches the contact information, the `break` 
+statement will *break* out of the loop, ending it. After the loop, it checks 
+whether a contact was found, and if **not**, the paragraph text is set to 
+`'Contact not found.'`.
 
 #### Skipping Iterations with continue
+The `continue` statement works similarly to `break`, but instead of breaking 
+out of the loop entirely, it skips to the next iteration of the loop.
+
+Example `continue` statement:
+```javascript
+btn.addEventListener('click', () => {
+  para.textContent = 'Output: ';
+  const num = input.value;
+  input.value = '';
+  input.focus();
+  for (let i = 1; i <= num; i++) {
+    let sqRoot = Math.sqrt(i);
+    if (Math.floor(sqRoot) != sqRoot) {
+      continue;
+    };
+    para.textContent += `${i} `;
+  };
+});
+```
+in this example, if the square root is an integer, we skip past the `if` block 
+entirely, so the `continue` statement is **not** executed. Instead the current 
+`i` value is concatenated to the end of the paragraph content.
 
 ### Test Driven Development
 TDD, or **T**est **D**riven **D**evelopment, refers to the practice of writing 
