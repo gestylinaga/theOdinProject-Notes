@@ -12,6 +12,7 @@
 - [DOM Manipulation & Events](./basics-DOM_manipulation_and_events.md)
 - Project: Revisiting [Rock Paper Scissors - Button UI](./projects/rps_ui)
 - Project: [Etch-a-Sketch](./projects/etch-a-sketch/)
+- [Fundamentals 5](./basics-fundamentals5.md)
 - Project: [Calculator](./projects/calculator)
 
 ### Organizing your JavaScript Code
