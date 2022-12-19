@@ -27,6 +27,7 @@
 ### A Bit of Computer Science
 
 ### Testing JavaScript 
+- [Testing Basics](./testing-basics.md)
 
 ### Intermediate Git 
 
