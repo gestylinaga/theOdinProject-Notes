@@ -28,6 +28,7 @@
 
 ### Testing JavaScript 
 - [Testing Basics](./testing-basics.md)
+- Project: [Testing Practice](./projects/testing_practice/)
 
 ### Intermediate Git 
 
