@@ -6,7 +6,7 @@ describe('caesarCipher', () => {
   });
   test('single word, no shift', () => {
     expect(caesarCipher('zero', 0)).toBe('zero');
-  })
+  });
   test('single word, shifted 3 spaces', () => {
     expect(caesarCipher('three', 3)).toBe('wkuhh');
   });
@@ -21,7 +21,7 @@ describe('caesarCipher', () => {
   });
   test('keeps original punctuation', () => {
     expect(caesarCipher('hello, world!', 1)).toBe('ifmmp, xpsme!')
-  })
+  });
   test('keeps the original case', () => {
     expect(caesarCipher('camelCaseString', 1)).toBe('dbnfmDbtfTusjoh');
   });
