@@ -8,4 +8,27 @@
 body {
   background: black;
   color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  color: lightblue;
+}
+
+.container {
+  width: 700px;
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.container > div {
+  background: white;
+  color: black;
 }
