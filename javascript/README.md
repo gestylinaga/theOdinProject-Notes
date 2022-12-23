@@ -24,6 +24,7 @@
 ### JavaScript in the Real World
 
 ### Asynchronus JavaScript and APIs
+- [JSON](./async-json.md)
 
 ### A Bit of Computer Science
 
