@@ -131,12 +131,90 @@ Other JSON Notes:
   JSON only quoted strings may be used as properties.
 
 #### Converting Between Objects and Text
+Sometimes the response is a raw JSON string, and you need to convert it into an 
+object yourself. Also, when you want to send a JavaScript object across a 
+network, you need to convert it into a JSON string before sending it. Luckily, 
+these two problems are so common, that a built-in JSON object is available in 
+the browser, which contains the following two methods:
+  1. `parse()`: Accepts a JSON string as a parameter, and returns the 
+  corresponding JavaScript object.
+  2. `stringify()`: Accepts an object as a parameter, and returns the equivalent
+  JSON string.
 
 ### JSON.parse() and JSON.stringify()
+
+#### .parse()
 [W3Schools 1](https://www.w3schools.com/js/js_json_parse.asp) - on `JSON.parse()`
 
-[W3Schools 2](https://www.w3schools.com/js/js_json_stringify.asp) - on 
-`JSON.stringify()`
+When *receiving* data from a web server, the data is **always** a string. Parse 
+the data with `JSON.parse()`, and the data becomes a JavaScript object. Example
+web server response:
+```
+'{"name":"John", "age":30, "city":"Los Angeles"}'
+```
+Using the `JSON.parse()` function to convert text into a JavaScript object:
+```javascript
+const obj = JSON.parse('{"name":"John", "age":30, "city":"Los Angeles"}');
+```
+When the JSON response comes in the form of an array, `JSON.parse()` will return 
+an **array**, instead of an object:
+```javascript
+const text = '["Honda", "Toyota", "Nissan", "Mitsubishi"]';
+const asArray = JSON.parse(text);
+```
+
+#### .stringify()
+[W3Schools 2](https://www.w3schools.com/js/js_json_stringify.asp) - on `JSON.stringify()`
+
+When *sending* data to a web server, the data has to be a **string**. To convert 
+a JavaScript object into a string, use `JSON.stringify()`:
+```javascript
+const obj = {name: "John", age: 30, city: "Los Angeles"};
+
+// Converting to a string:
+const myJSON = JSON.stringify(obj);
+```
+And, just like the `.parse()` example, you can use `.stringify()` on arrays too:
+```javascript
+const arr = ["Mark", "Tom", "Travis"];
+
+// Converting to a string:
+const myJSON = JSON.stringify(arr);
+```
+This method is also useful for storing data, regardless of where you store it, 
+because *text* is always one of the legal formats:
+```javascript
+// Storing data to local storage:
+const myObj = {name: "John", age: 30, city: "Los Angeles"};
+const myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data from local storage:
+let text = localStorage.getItem("testJSON");
+let obj = JSON.parse(text);
+document.querySelector('p').innerHTML = obj.name;
+```
+
+In JSON, date objects are **not** allowed. The `JSON.stringify()` function will 
+convert any dates into string:
+```javascript
+const obj = {name: "John", today: new Date(), city: "Los Angeles"};
+const myJSON = JSON.stringify(obj);
+```
+Similarly, JavaScript functions are also **not** allowed in JSON. So 
+`JSON.stringify()` will remove any functions from a JavaScript object, both the 
+key and value:
+```javascript
+const obj = {name: "John", age: function () {return 30;}, city: "Los Angeles"};
+const myJSON = JSON.stringify(obj);
+```
+This behavior can be omitted if you convert your function to a string before 
+running `JSON.stringify()` like this:
+```javascript
+const obj = {name: "John", age: function () {return 30;}, city: "Los Angeles"};
+obj.age = obj.age.toString();
+const myJSON = JSON.stringify(obj);
+```
 
 ## Additional Resources
 [JSON formatter](https://jsonformatter.curiousconcept.com/) - website that lets 
